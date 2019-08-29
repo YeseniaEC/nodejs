@@ -1,0 +1,23 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "Node JS crash course",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YeseniaEC/nodejs.git"
+  },
+  "author": "Yesenia Cardenas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YeseniaEC/nodejs/issues"
+  },
+  "homepage": "https://github.com/YeseniaEC/nodejs#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
