@@ -34,16 +34,18 @@ const server = http.createServer((req, res) => {
     //     res.end(JSON.stringify(users));
     // }
 
+    // Above code is looking for each file and then running the code,
+        // below we have simplified it and automated most of the process to load each path
+
     // Build file path
     let filePath = path.join(__dirname, 'public', 
         req.url === '/' ? 'index.html' : req.url );
-    
     // Extension of file
     let extname = path.extname(filePath);
-    //initial content
+    // Initial content
     let contentType = 'text/html';
 
-    switch (extname) {
+    switch (extname) { // this will check between each file type to correctly display file
         case '.js':
             contentType = 'text/javascript';
             break;
@@ -72,18 +74,17 @@ const server = http.createServer((req, res) => {
                     res.end(content, 'utf8');
                 })
             } else {
-                //some server error 
+                // Some server error 
                 res.writeHead(500);
                 res.end(`Server Error: ${err.code}`);
             }
         } else {
-            //success
+            // Success
             res.writeHead(200, { 'Content-Type': contentType });
             res.end(content, 'utf8');
         }
     });
 });
 
-const PORT = process.env.PORT || 5000;
-
-server.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
+const PORT = process.env.PORT || 5000; // default 5000 or if different will populate with current
+server.listen(PORT, () => console.log(`Server running on PORT ${PORT}`)); // server listens on the port and logs it
