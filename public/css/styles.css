@@ -2,3 +2,30 @@ body {
     background:  #333;
     color: #fff;
 }
+
+h1, h2, p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 800;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    display: inline;
+}
+
+li, a {
+    text-decoration: none;
+    color: #fff;
+    display: inline;
+    margin: 2px;
+    font-size: 18px;
+}
+
+a {
+    border: 1px solid black;
+    margin: 2px;
+    padding: 5px;
+    background-color: rgb(27, 27, 27);
+    border-radius: 15%;
+}
